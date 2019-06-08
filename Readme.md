@@ -7,7 +7,7 @@ Primarily for testing CLion embedded support.
 
 Features
 ---
-Uses QEMU emulation of TI lm3s811evb.QEMU is run with some garbage (README file) instead of kernel image. The binary is uploaded via gdb anyway but qemu
+Uses QEMU emulation of TI lm3s811evb. QEMU is run with some garbage (README file) instead of kernel image. The binary is uploaded via gdb anyway but qemu
 requires some kernel to start.
 
 QEMU cmd arguments:
