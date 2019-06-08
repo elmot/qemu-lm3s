@@ -26,12 +26,10 @@ Standard CMSIS 5 for Cortex-M3 + libnano are used. CMSIS is modified according t
 
 
 There is a [fake peripheral device definition](fake_peripheral.svd) which may be used for debugging and testing
-purposes. The "device" is located in RAM, at address `0x20001800`. In the program code it is filled up with value.
+purposes. The "device" is located in RAM, at address `0x20001800`. In the program code it is filled up with values.
 
 
 Clion Run configuration
 ---
 
 ![Clion Run configuration](runconfig.png)
-
-Still work in progress
