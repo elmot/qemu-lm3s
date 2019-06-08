@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+    <vendor>Jetbrains</vendor>
+    <vendorID>Jetbrains</vendorID>
+    <name>FAKE_MCU</name>
+    <series>FAKE_MCU</series>
+    <version>1.0</version>
+    <description>Fake device peripherals definition for testing purposes</description>
+    <licenseText>This is free and unencumbered software released into the public domain.
+
+        Anyone is free to copy, modify, publish, use, compile, sell, or
+        distribute this software, either in source code form or as a compiled
+        binary, for any purpose, commercial or non-commercial, and by any
+        means.
+
+        In jurisdictions that recognize copyright laws, the author or authors
+        of this software dedicate any and all copyright interest in the
+        software to the public domain. We make this dedication for the benefit
+        of the public at large and to the detriment of our heirs and
+        successors. We intend this dedication to be an overt act of
+        relinquishment in perpetuity of all present and future rights to this
+        software under copyright law.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+        OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+        ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+        OTHER DEALINGS IN THE SOFTWARE.
+
+        For more information, please refer to http://unlicense.org/
+    </licenseText>
+    <cpu>
+        <name>CM3</name>
+        <revision>r1p1</revision>
+        <endian>little</endian>
+        <mpuPresent>false</mpuPresent>
+        <fpuPresent>false</fpuPresent>
+        <nvicPrioBits>4</nvicPrioBits>
+        <vendorSystickConfig>false</vendorSystickConfig>
+    </cpu>
+    <addressUnitBits>8</addressUnitBits>
+    <width>32</width>
+    <size>32</size>
+    <access>read-write</access>
+    <resetValue>0x00000000</resetValue>
+    <resetMask>0xFFFFFFFF</resetMask>
+
+    <peripherals>
+        <peripheral>
+            <name>FAKE_PERIPH</name>
+            <description>Fake device peripherals definition for testing purposes</description>
+            <baseAddress>0x20001800</baseAddress>
+
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x10</size>
+                <usage>registers</usage>
+            </addressBlock>
+
+            <registers>
+                <register>
+                    <name>REG_8</name>
+                    <description>8-bit Register</description>
+                    <addressOffset>0</addressOffset>
+                    <size>8</size>
+                    <resetValue>0x4</resetValue>
+                    <resetMask>0xFF</resetMask>
+                </register>
+
+                <register>
+                    <name>REG_16</name>
+                    <description>16-bit Register</description>
+                    <addressOffset>1</addressOffset>
+                    <size>16</size>
+                    <resetValue>0x5</resetValue>
+                    <resetMask>0xFFFF</resetMask>
+                </register>
+
+                <register>
+                    <name>REG_32</name>
+                    <description>32-bit Register</description>
+                    <addressOffset>3</addressOffset>
+                    <size>32</size>
+                    <resetValue>0x6</resetValue>
+                    <resetMask>0xFFFFFFFF</resetMask>
+                </register>
+                <register>
+                    <name>REG_32BITFIELD</name>
+                    <description>32-bit Register with bit fields</description>
+                    <addressOffset>7</addressOffset>
+                    <size>32</size>
+                    <resetValue>0x7</resetValue>
+                    <resetMask>0xFFFFFFFF</resetMask>
+                    <fields>
+                        <field>
+                            <name>F_1</name>
+                            <description>1-bit field</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                            <access>read-write</access>
+                        </field>
+                        <field>
+                            <name>F_2</name>
+                            <description>2-bit field</description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>2</bitWidth>
+                            <access>read-write</access>
+                        </field>
+                        <field>
+                            <name>F_3</name>
+                            <description>3-bit field</description>
+                            <bitRange>[3:5]</bitRange>
+                            <access>read-write</access>
+                        </field>
+                        <field>
+                            <name>F_4</name>
+                            <description>4-bit field</description>
+                            <lsb>6</lsb>
+                            <msb>9</msb>
+                            <access>read-write</access>
+                        </field>
+                        <field>
+                            <name>F_5</name>
+                            <description>5-bit field</description>
+                            <bitRange>[14:18]</bitRange>
+                            <access>read-write</access>
+                        </field>
+                        <field>
+                            <name>F_6</name>
+                            <description>6-bit field</description>
+                            <bitRange>[19:24]</bitRange>
+                            <access>read-write</access>
+                        </field>
+                        <field>
+                            <name>F_7</name>
+                            <description>7-bit field</description>
+                            <bitRange>[25:31]</bitRange>
+                            <access>read-write</access>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+    </peripherals>
+</device>
