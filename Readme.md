@@ -13,7 +13,7 @@ requires some kernel to start.
 QEMU cmd arguments:
 * `-cpu cortex-m3` - cpu type
 * `-M lm3s811evb` - guest machine type
-* `-nographic` - cpu type
+* `-nographic` - do not open window
 * `-s` - cli shortcut to start gdbserver at port 1234
 * `-S` - freeze execution, wait until gdb is connected
 * `-kernel README` - load binary garbage as kernel
