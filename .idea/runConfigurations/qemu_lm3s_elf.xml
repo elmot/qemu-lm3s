@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="qemu-lm3s.elf" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" nameIsGenerated="true" PROGRAM_PARAMS="-cpu cortex-m3 -M lm3s811evb -nographic -s -S -kernel README " PASS_PARENT_ENVS_2="true" PROJECT_NAME="qemu-lm3s" TARGET_NAME="qemu-lm3s.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="qemu-lm3s" RUN_TARGET_NAME="qemu-lm3s.elf">
+    <custom-gdb-server version="1" gdb-connect="tcp:localhost:1234" executable="C:\Program Files\qemu\qemu-system-arm.exe" reset-cmd="monitor system_reset" warmup-ms="0" download-type="ALWAYS" />
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

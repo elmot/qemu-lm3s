@@ -32,8 +32,8 @@ int main(void) {
     FAKE_PERIPHERAL->REG_16 = 0xBCBC;
     FAKE_PERIPHERAL->REG_32 = 0xAA55C396;
     FAKE_PERIPHERAL->field5 = 9;
-
     for (int i = 0; 1; i++) {
+        FAKE_PERIPHERAL->REG_16++;
         printf("Hello, World!!! %x\n", i);
         for (long  j = 0; j < 100000000L; j++) {
             __asm__("nop");
