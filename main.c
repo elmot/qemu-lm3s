@@ -1,5 +1,6 @@
 #include <stdint-gcc.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
     uint8_t REG_8;
@@ -20,11 +21,16 @@ typedef struct {
     };
 } __attribute__((packed)) FAKE_PERIPHERAL_TYPE;
 
-FAKE_PERIPHERAL_TYPE *FAKE_PERIPHERAL = (FAKE_PERIPHERAL_TYPE *)0x20001800;
+FAKE_PERIPHERAL_TYPE *FAKE_PERIPHERAL = (FAKE_PERIPHERAL_TYPE *) 0x20001800;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
+#define ARR_SIZE 1000
+__unused int arr[ARR_SIZE];
 
 int main(void) {
+    for (int k = 0; k < ARR_SIZE; ++k) {
+        arr[k] = k * k;
+    }
     printf("Size of the peripheral struct %d\n", sizeof(*FAKE_PERIPHERAL));
 
     FAKE_PERIPHERAL->REG_32BITFIELD = 0xABCDEF79;
@@ -35,8 +41,11 @@ int main(void) {
     for (int i = 0; 1; i++) {
         FAKE_PERIPHERAL->REG_16++;
         printf("Hello, World!!! %x\n", i);
-        for (long  j = 0; j < 100000000L; j++) {
-            __asm__("nop");
+        for (long j = 0; j < 100000000L; j++) {
+        }
+        __asm__("nop");
+        for (int k = 0; k < ARR_SIZE; ++k) {
+            arr[k] += random() / (RAND_MAX/350);
         }
     }
 }

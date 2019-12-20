@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+  <component name="charttool">
+    <option name="myLocations">
+      <map>
+        <entry>
+          <key>
+            <Location>
+              <option name="myFileUrl" value="file://$PROJECT_DIR$/main.c" />
+              <option name="myLineNo" value="45" />
+            </Location>
+          </key>
+          <value>
+            <LineState>
+              <option name="mySample" value="true" />
+              <option name="myAutoResume" value="true" />
+            </LineState>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="myExpressions">
+      <list>
+        <ChartExpression>
+          <option name="expression" value="arr" />
+          <option name="name" value="arr" />
+          <option name="state" value="Accumulate" />
+        </ChartExpression>
+      </list>
+    </option>
+  </component>
 </project>
