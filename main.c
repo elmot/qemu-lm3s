@@ -18,12 +18,23 @@ typedef struct {
             unsigned int field7:7;
         };
     };
+    uint8_t gap[5];
+    uint64_t REG_TEST_FIELD_BITNESS_AND_BITMASKS;
 } __attribute__((packed)) FAKE_PERIPHERAL_TYPE;
 
 FAKE_PERIPHERAL_TYPE *FAKE_PERIPHERAL = (FAKE_PERIPHERAL_TYPE *)0x20001800;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
+const uint64_t TEST64_BIT_VALUES[] = {
+    -1LL/*MINUS_ONE*/,
+    5LL/*5_OR_13_OR_21*/,
+    6LL/*DEF_VALUE*/,
+    13LL/*5_OR_13_OR_21*/,
+    21LL/*5_OR_13_OR_21*/,
+    0b100101LL/*DEF_VALUE*/,
+    0LL/*Last must be zero*/,
+};
 int main(void) {
     printf("Size of the peripheral struct %d\n", sizeof(*FAKE_PERIPHERAL));
 
@@ -32,7 +43,12 @@ int main(void) {
     FAKE_PERIPHERAL->REG_16 = 0xBCBC;
     FAKE_PERIPHERAL->REG_32 = 0xAA55C396;
     FAKE_PERIPHERAL->field5 = 9;
-    for (int i = 0; 1; i++) {
+    FAKE_PERIPHERAL->REG_TEST_FIELD_BITNESS_AND_BITMASKS = -1LL;
+    for (int i = 0, idx64Val = 0; 1; ++i, ++idx64Val) {
+        FAKE_PERIPHERAL->REG_TEST_FIELD_BITNESS_AND_BITMASKS = TEST64_BIT_VALUES[idx64Val];
+        if(TEST64_BIT_VALUES[idx64Val]==0LL) {
+            idx64Val = -1;
+        }
         FAKE_PERIPHERAL->REG_16++;
         printf("Hello, World!!! %x\n", i);
         for (long  j = 0; j < 100000000L; j++) {

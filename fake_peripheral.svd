@@ -141,6 +141,35 @@
                         </field>
                     </fields>
                 </register>
+                <register>
+                    <name>REG_TEST_FIELD_BITNESS_AND_BITMASKS</name>
+                    <addressOffset>0x10</addressOffset>
+                    <size>64</size>
+                    <fields>
+                        <field>
+                            <name>BIT_64_FIELD</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>64</bitWidth>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>DEF_VALUE</name>
+                                    <isDefault>true</isDefault>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>MINUS_ONE</name>
+                                    <description>All bits == 1</description>
+                                    <value>0xFFFFFFFFFFFFFFFF</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>5_OR_13_OR_21</name>
+                                    <description>Test bitmask with a "do not care" bit</description>
+                                    <value>#0xx1x1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
+                        </field>
+                    </fields>
+                </register>
+
             </registers>
         </peripheral>
     </peripherals>
