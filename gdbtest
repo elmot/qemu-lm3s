@@ -1,0 +1,4 @@
+target remote tcp:localhost:1234
+file cmake-build-debug/qemu-lm3s.elf 
+load
+b main.c:41
